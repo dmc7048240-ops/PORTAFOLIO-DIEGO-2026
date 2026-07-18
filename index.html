@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Diego MC - Desenvolvedor Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- NAVEGAÇÃO -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container-nav">
+                <div class="logo">
+                    <span class="logo-text">DEV</span>
+                    <span class="logo-text verde">CODE</span>
+                </div>
+                <ul class="menu" id="menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- SEÇÃO HOME -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="titulo-principal">
+                    Olá, eu sou <span class="verde">Diego MC</span> Desenvolvedor Wed
+                </h1>
+                <p class="subtitulo">Criando experiências digitais incríveis com HTML, CSS e JavaScript</p>
+                <div class="botoes-cta">
+                    <button class="btn btn-primary"><a href="#projetos">Ver Projetos</a></button>
+                    <button class="btn btn-secondary"><a href="#contato">Entre em Contato</a></button>
+                </div>
+                <div class="redes-sociais">
+                    <a href="https://www.linkedin.com/in/diego-mamani-programador/" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/dmc7048240-ops/dmc7048240-ops" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/diegoaprendeycomparteoficial?igsh=MTkzd2lwcGl2OHA0eQ=="
+                        class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-imagem">
+                <div class="codigo-animado">
+                    <div class="linha">
+                        <span class="tag">&lt;html&gt;</span>
+                    </div>
+                    <div class="linha">
+                        <span class="tag">&lt;body&gt;</span>
+                    </div>
+                    <div class="linha linha-indent">
+                        <span class="tag">&lt;h1&gt;</span>
+                        <span class="texto">Bem-vindo</span>
+                        <span class="tag">&lt;/h1&gt;</span>
+                    </div>
+                    <div class="linha">
+                        <span class="tag">&lt;/body&gt;</span>
+                    </div>
+                    <div class="linha">
+                        <span class="tag">&lt;/html&gt;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2 class="titulo-secao">Sobre Mim</h2>
+            <div class="sobre-content">
+                <div class="sobre-texto">
+                    <p>
+                        Sou um desenvolvedor web apaixonado por criar soluções inovadoras e eficientes.
+                        Com experiência em desenvolvimento front-end e back-end, tenho o compromisso de
+                        entregar projetos de alta qualidade que atendem às necessidades dos clientes.
+                    </p>
+                    <p>
+                        Minha jornada na programação começou há alguns anos e desde então venho
+                        aprimorando minhas habilidades através de projetos reais e aprendizado contínuo.
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3 class="numero">50+</h3>
+                            <p>Projetos</p>
+                        </div>
+                        <div class="stat">
+                            <h3 class="numero">30+</h3>
+                            <p>Clientes</p>
+                        </div>
+                        <div class="stat">
+                            <h3 class="numero">5+</h3>
+                            <p>Anos Exp.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sobre-imagem">
+                    <div class="imagem-placeholder">
+                        <img src="./assets/Diego verde.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO HABILIDADES -->
+    <section id="habilidades" class="habilidades">
+        <div class="container">
+            <h2 class="titulo-secao">Habilidades Técnicas</h2>
+            <div class="habilidades-grid">
+                <div class="habilidade-card">
+                    <div class="habilidade-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                    <p>Estrutura semântica e acessível</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+
+                <div class="habilidade-card">
+                    <div class="habilidade-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3</h3>
+                    <p>Design responsivo e animações</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <div class="habilidade-card">
+                    <div class="habilidade-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>Interatividade e DOM manipulation</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%;"></div>
+                    </div>
+                </div>
+
+                <div class="habilidade-card">
+                    <div class="habilidade-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React</h3>
+                    <p>Componentes e state management</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <div class="habilidade-card">
+                    <div class="habilidade-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3>Node.js</h3>
+                    <p>APIs REST e servidores</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 82%;"></div>
+                    </div>
+                </div>
+
+                <div class="habilidade-card">
+                    <div class="habilidade-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Banco de Dados</h3>
+                    <p>MongoDB, MySQL, PostgreSQL</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PROJETOS -->
+    <section id="projetos" class="projetos">
+        <div class="container">
+            <h2 class="titulo-secao">Meus Projetos</h2>
+            <div class="projetos-grid">
+                <div class="projeto-card">
+                    <div class="projeto-imagem">
+                        <div class="placeholder-img">
+                            <img src="https://i.pinimg.com/1200x/c9/91/fa/c991fad20ac4e2485a6945c9b78d55d9.jpg">
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <h3>E-commerce Platform</h3>
+                        <p>Plataforma de vendas completa com carrinho de compras e pagamento integrado.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://dmc7048240-ops.github.io/E-Comerce/" class="link-projeto">
+                                <i class="fas fa-external-link-alt"></i> Ver Live
+                            </a>
+                            <a href="https://github.com/dmc7048240-ops/E-Comerce" class="link-projeto">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-imagem">
+                        <div class="placeholder-img">
+                            <img src="https://i.pinimg.com/1200x/a5/5e/7b/a55e7b51c2eb469ab3348fce08bd607d.jpg">
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Mecanico</h3>
+                        <p>Site para mecanicos com bom trabalho</p>
+                        <div class="projeto-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://dmc7048240-ops.github.io/-Meu-projeto-mecanico/" class="link-projeto">
+                                <i class="fas fa-external-link-alt"></i> Ver Live
+                            </a>
+                            <a href="#" class="link-projeto">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-imagem">
+                        <div class="placeholder-img">
+                            <img src="https://i.pinimg.com/1200x/a0/cd/90/a0cd9079fa97de3ada206d6e9938b327.jpg">
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Pet - Shop</h3>
+                        <p>Blog responsivo com sistema de comentários, categorias e busca avançada.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://dmc7048240-ops.github.io/Pet-Shop/" class="link-projeto">
+                                <i class="fas fa-external-link-alt"></i> Ver Live
+                            </a>
+                            <a href="#" class="link-projeto">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-imagem">
+                        <div class="placeholder-img">
+                            <img src="https://i.pinimg.com/736x/3d/fa/ba/3dfaba41a170683f353dd2133f3d5001.jpg">
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Restaurante - Pizza</h3>
+                        <p>Dashboard interativo com gráficos em tempo real e exportação de relatórios.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Chart.js</span>
+                            <span class="tag">API REST</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://dmc7048240-ops.github.io/Restaurante-Pizzas/" class="link-projeto">
+                                <i class="fas fa-external-link-alt"></i> Ver Live
+                            </a>
+                            <a href="#" class="link-projeto">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-imagem">
+                        <div class="placeholder-img">
+                            <img src="https://i.pinimg.com/736x/4b/96/99/4b96993654b2d671d2743c057c8550dd.jpg">
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Barberia</h3>
+                        <p>Rede social com feed, mensagens diretas e sistema de notificações.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">MERN Stack</span>
+                            <span class="tag">Socket.io</span>
+                            <span class="tag">JWT</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://dmc7048240-ops.github.io/Barbero-Profissional/" class="link-projeto">
+                                <i class="fas fa-external-link-alt"></i> Ver Live
+                            </a>
+                            <a href="#" class="link-projeto">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-imagem">
+                        <div class="placeholder-img">
+                            <img src="https://i.pinimg.com/736x/34/18/60/341860b14a97fee2f9ea91648ea40611.jpg">
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Site Academia</h3>
+                        <p>Aplicativo de previsão do tempo com localização automática e interface intuitiva.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">API Weather</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://dmc7048240-ops.github.io/Academia/" class="link-projeto">
+                                <i class="fas fa-external-link-alt"></i> Ver Live
+                            </a>
+                            <a href="#" class="link-projeto">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO -->
+    <section id="contato" class="contato">
+        <div class="contact-header">
+            <h1>Entre em Contato</h1>
+            <div class="contact-line"></div>
+            <p>Estou sempre disponível para discutir projetos, criar ideias e falar sobre desenvolvimento web. Não
+                hesite em entrar em contato!</p>
+        </div>
+        <div class="container">
+            <div class="contact-container">
+
+                <div class="contact-card">
+                    <div class="contact-icon"><img
+                            src="https://img.icons8.com/?size=100&id=iucnc54epl0f&format=png&color=000000"></div>
+                    <h3 class="contact-title">Email</h3>
+                    <p class="contact-value">diegomamani.dev@gmail.com</p>
+                    <a href="mailto:joao.dev@email.com" class="contact-link">Enviar Email</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon"><img
+                            src="https://img.icons8.com/?size=100&id=DUEq8l5qTqBE&format=png&color=000000"></div>
+                    <h3 class="contact-title">Telefone</h3>
+                    <p class="contact-value">+55 (11) 952433754</p>
+                    <a href="https://wa.me/5511952433754?text=Quero%20mais%20informa%C3%A7%C3%A3o?"
+                        class="contact-link">Ligar</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon"><img
+                            src="https://img.icons8.com/?size=100&id=kBCrQMzpQDLQ&format=png&color=000000"></div>
+                    <h3 class="contact-title">LinkedIn</h3>
+                    <p class="contact-value">linkedin.com/in/joao.dev</p>
+                    <a href="https://www.linkedin.com/in/diego-mamani-programador/" target="_blank"
+                        class="contact-link">Visitar</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon"><img
+                            src="https://img.icons8.com/?size=100&id=LoL4bFzqmAa0&format=png&color=000000"></div>
+                    <h3 class="contact-title">GitHub</h3>
+                    <p class="contact-value">github.com/joao-dev</p>
+                    <a href="https://github.com/dmc7048240-ops/dmc7048240-ops" target="_blank"
+                        class="contact-link">Visitar</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><img
+                            src="https://img.icons8.com/?size=100&id=jZ0kw76QEzJU&format=png&color=000000"></div>
+                    <h3 class="contact-title">Facebook</h3>
+                    <p class="contact-value">Facebook</p>
+                    <a href="https://www.facebook.com/share/1925HcqGsT/" target="_blank"
+                        class="contact-link">Visitar</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><img
+                            src="https://img.icons8.com/?size=100&id=DwGn7dCaUcoh&format=png&color=000000"></div>
+                    <h3 class="contact-title">Localização</h3>
+                    <p class="contact-value">Localização</p>
+                    <a href="https://maps.app.goo.gl/dJsBQj6gSnQvfqJ6A" target="_blank" class="contact-link">Visitar</a>
+                </div>
+            </div>
+    </section>
+</body>
+<script src="./script.js"></script>
+
+</html>
