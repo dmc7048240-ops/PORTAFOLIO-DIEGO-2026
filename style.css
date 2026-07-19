@@ -611,13 +611,27 @@ body {
 }
 
 @media (max-width: 480px) {
+    
     .hero {
         min-height: auto;
         padding: 40px 15px;
     }
+    .hero-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+
+    }
+    .hero-imagem{
+        display: none;
+    }
 
     .titulo-principal {
-        font-size: 1.5rem;
+        font-size: 30px;
+        text-align: center;
+        flex-grow: 1;
     }
 
     .subtitulo {
@@ -627,6 +641,7 @@ body {
 
     .botoes-cta {
         gap: 10px;
+        width: 80%;
     }
 
     .btn {
@@ -636,6 +651,7 @@ body {
 
     .redes-sociais {
         gap: 15px;
+        flex-grow: 1;
     }
 
     .social-link {
@@ -1672,7 +1688,7 @@ body {
 }
 
 .titulo-principal {
-    font-size: 56px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     margin-bottom: 20px;
     line-height: 1.2;
@@ -2235,7 +2251,7 @@ body {
 }
 
 .titulo-principal {
-    font-size: 56px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     margin-bottom: 20px;
     line-height: 1.2;
