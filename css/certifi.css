@@ -1,3 +1,7 @@
+/* ========================================
+   COVERFLOW & MODAL - BASE (DINÂMICO)
+   ======================================== */
+
 /* Container Principal (Fundo Transparente) */
 .coverflow-section {
     padding: 60px 0;
@@ -53,7 +57,8 @@
     width: 300px;
     height: 420px;
     background: rgba(20, 20, 20, 0.85); /* Fundo escuro semi-transparente para o card */
-    border: 2px solid rgba(255, 0, 0, 0.3); /* Borda avermelhada sutil inicial */
+    border: 2px solid var(--primary); /* Integrado às variáveis de tema */
+    border-color: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     padding: 16px;
     box-sizing: border-box;
@@ -68,12 +73,15 @@
                 border-color 0.5s ease, 
                 box-shadow 0.5s ease;
     user-select: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
-/* Card Ativo (Centro) - Brilho de neon vermelho igual à imagem de referência */
+/* Card Ativo (Centro) */
 .coverflow-card.active {
-    border-color: rgb(30, 255, 109);
-    box-shadow: 0 0 30px rgba(42, 251, 19, 0.6), 0 10px 40px rgba(0, 0, 0, 0.7);
+    border-color: var(--primary);
+    box-shadow: var(--glow-medium), 0 10px 40px rgba(0, 0, 0, 0.7);
 }
 
 /* Área da Imagem */
@@ -96,7 +104,7 @@
 .coverflow-card h4 {
     margin: 12px 0 4px 0;
     font-size: 1.15rem;
-    color: #fff;
+    color: var(--primary);
 }
 
 .coverflow-card p {
@@ -105,21 +113,14 @@
     color: #bbb;
 }
 
-.coverflow-card {
-    font-size: 0.8rem;
-    color: #e50914; /* Destaque vermelho no ano */
-    font-weight: bold;
-    margin-top: 5px;
-}
-
 /* Setas de Navegação Laterais */
 .coverflow-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 0, 0, 0.15);
-    border: 1px solid rgba(255, 0, 0, 0.4);
-    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--primary);
+    color: var(--primary);
     font-size: 1.5rem;
     width: 45px;
     height: 45px;
@@ -133,8 +134,9 @@
 }
 
 .coverflow-nav:hover {
-    background: rgba(255, 0, 0, 0.7);
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    background: var(--primary);
+    color: var(--bg-dark, #000);
+    box-shadow: var(--glow-soft);
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -165,7 +167,7 @@
     transition: 0.3s;
 }
 
-.cert-modal-close:hover { color: #ff3333; }
+.cert-modal-close:hover { color: var(--primary); }
 
 #certModalImg {
     margin: auto;
@@ -177,21 +179,111 @@
     top: 50%;
     transform: translateY(-50%) scale(0.85);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 0 40px rgba(255, 0, 0, 0.3);
+    box-shadow: var(--glow-strong);
 }
 
 #certModalImg.zoom {
     transform: translateY(-50%) scale(1);
 }
-.logo-emoji{
+
+.logo-emoji {
     height: 80px;
     width: 80px;
-    img{
-        height: 100%;
-        width: 100%;
-    }
 }
-.cert-date{
-    color: rgb(7, 191, 32);
+
+.logo-emoji img {
+    height: 100%;
+    width: 100%;
+}
+
+.cert-date {
+    color: var(--secondary);
     font-size: 20px;
+}
+
+
+/* ========================================
+   CORES ESPECÍFICAS POR TEMA (COVERFLOW)
+   ======================================== */
+
+/* Tema 1: Verde Neon */
+body.theme-green .coverflow-card {
+    border-color: rgba(0, 255, 136, 0.3);
+}
+body.theme-green .coverflow-card.active {
+    border-color: #00ff88;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.6), 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Tema 2: Azul Elétrico */
+body.theme-blue .coverflow-card {
+    border-color: rgba(0, 191, 255, 0.3);
+}
+body.theme-blue .coverflow-card.active {
+    border-color: #00bfff;
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.6), 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Tema 3: Vermelho Cyber */
+body.theme-red .coverflow-card {
+    border-color: rgba(255, 0, 85, 0.3);
+}
+body.theme-red .coverflow-card.active {
+    border-color: #ff0055;
+    box-shadow: 0 0 30px rgba(255, 0, 85, 0.6), 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Tema 4: Roxo Galaxy */
+body.theme-purple .coverflow-card {
+    border-color: rgba(176, 0, 255, 0.3);
+}
+body.theme-purple .coverflow-card.active {
+    border-color: #b000ff;
+    box-shadow: 0 0 30px rgba(176, 0, 255, 0.6), 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Tema 5: Dourado */
+body.theme-gold .coverflow-card {
+    border-color: rgba(255, 215, 0, 0.3);
+}
+body.theme-gold .coverflow-card.active {
+    border-color: #ffd700;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Tema 6: Ciano */
+body.theme-cyan .coverflow-card {
+    border-color: rgba(0, 255, 255, 0.3);
+}
+body.theme-cyan .coverflow-card.active {
+    border-color: #00ffff;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Tema 7: Branco Futurista */
+body.theme-white .coverflow-title {
+    color: #1a1a2e;
+}
+body.theme-white .coverflow-subtitle {
+    color: rgba(26, 26, 46, 0.7);
+}
+body.theme-white .coverflow-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(26, 26, 46, 0.2);
+}
+body.theme-white .coverflow-card p {
+    color: rgba(26, 26, 46, 0.8);
+}
+body.theme-white .coverflow-card.active {
+    border-color: #1a1a2e;
+    box-shadow: 0 0 30px rgba(26, 26, 46, 0.3), 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Tema 8: Preto Infinito */
+body.theme-black .coverflow-card {
+    border-color: rgba(0, 255, 0, 0.3);
+}
+body.theme-black .coverflow-card.active {
+    border-color: #00ff00;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.6), 0 10px 40px rgba(0, 0, 0, 0.9);
 }

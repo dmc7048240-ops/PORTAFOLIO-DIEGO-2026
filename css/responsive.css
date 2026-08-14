@@ -105,6 +105,8 @@ margin-left: 1rem;
 }
 }
 
+
+
 /* ===== MOBILE LANDSCAPE (568px - 1024px) ===== */
 @media (max-width: 768px) {
 :root {
@@ -116,37 +118,85 @@ padding: 0 1rem;
 }
 
 /* Navbar */
-.menu-toggle {
-display: flex !important;
+/* =========================================================
+   MEDIA QUERIES (RESPONSIVIDADE) HEADERS
+   ========================================================= */
+
+/* ===== CURSOR CUSTOMIZADO (CORREÇÃO DE CLIQUE) ===== */
+#customCursor, .cursor {
+  pointer-events: none !important; /* IMPORTANTE: Impede que o cursor bloqueie o clique nos botões */
+  z-index: 9999;
 }
 
-.nav-menu {
-position: fixed;
-top: 60px;
-right: 0;
-flex-direction: column;
-gap: 1rem;
-background: rgba(15, 15, 35, 0.95);
-backdrop-filter: blur(10px);
-padding: 2rem;
-max-height: 0;
-overflow: hidden;
-transition: max-height 0.3s ease;
-border-bottom: 1px solid rgba(0, 255, 136, 0.1);
-}
+/* ===== NAVBAR RESPONSIVA ===== */
+@media (max-width: 992px) {
+  /* Exibe o botão hambúrguer acima do canvas e do cursor */
+  .menu-toggle {
+    display: flex !important;
+    z-index: 10002 !important;
+    position: relative;
+    cursor: pointer !important;
+  }
 
-.nav-menu.active {
-max-height: 500px;
-}
+  .social-header {
+    display: none !important;
+  }
 
-.social-header {
-display: none;
+  /* Gaveta do Menu Mobile */
+  .nav-menu {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 80% !important;
+    max-width: 300px !important;
+    height: 100vh !important;
+    height: 100dvh !important; /* Garante altura total em navegadores mobile */
+    background: #0b0f19 !important; /* Fundo escuro sólido para garantir visibilidade */
+    
+    /* Layout dos Links */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.2rem !important;
+    padding: 2rem 1rem !important;
+    
+    overflow-y: auto !important; /* Permite rolar os links se a tela for muito pequena */
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.8) !important;
+    transition: right 0.3s ease-in-out !important;
+    z-index: 10001 !important; /* Fica acima do Canvas e da página */
+  }
+
+  /* Classe quando o botão é clicado */
+  .nav-menu.active {
+    right: 0 !important;
+  }
+
+  /* Estilização e visibilidade total dos Links */
+  .nav-link {
+    font-size: 1.1rem !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    opacity: 0.9 !important;
+    padding: 0.5rem 1rem !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--primary, #00ff88) !important;
+    opacity: 1 !important;
+  }
 }
+/**=====================================================================================/
 
 /* Hero Section */
 .hero-section {
 min-height: auto;
 padding: 60px 0;
+
+
 }
 
 .hero-container {
@@ -162,6 +212,9 @@ margin: 0 auto 2rem;
 .avatar-image {
 width: 160px;
 height: 160px;
+}
+.avatar-wrapper{
+    padding-top: 100px;
 }
 
 .avatar-ring-1 { width: 220px; height: 220px; }
@@ -275,6 +328,8 @@ grid-template-columns: 1fr;
 gap: 2rem;
 }
 }
+
+
 
 /* ===== MOBILE SMALL (320px - 568px) ===== */
 @media (max-width: 480px) {

@@ -142,6 +142,8 @@ body.theme-white {
 --glow-strong: 0 0 40px rgba(255, 255, 255, 0.8);
 }
 
+
+
 body.theme-white {
 background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%) !important;
 color: #1a1a2e;

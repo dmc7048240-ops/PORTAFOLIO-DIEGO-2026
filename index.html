@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/certifi.css" >
+    <link rel="stylesheet" href="css/certifi.css">
 
     <!-- Preload Fonts -->
     <link rel="preload" as="font" href="assets/fonts/space-mono.woff2" type="font/woff2" crossorigin>
@@ -151,6 +151,7 @@ HEADER / NAVBAR
     <!-- ============================
 MAIN CONTENT
 ============================ -->
+
     <main id="mainContent">
 
         <!-- ===== SEÇÃO HOME / HERO ===== -->
@@ -274,16 +275,18 @@ MAIN CONTENT
 
                         <h3 class="about-subtitle">Minha Jornada</h3>
                         <p>
-                            Comecei programando aos 21 anos e desde então não parei. Especializei-me em desenvolvimento
-                            web moderno, criando aplicações escaláveis e interfaces impressionantes que conectam pessoas
-                            e resolvem problemas reais.
+                            Comecei no mundo da programação aos 21 anos e, desde então, venho me aprimorando
+                            constantemente.
+                            Especializei-me em desenvolvimento web moderno, com foco na criação de aplicações escaláveis
+                            e interfaces
+                            impressionantes que conectam pessoas e resolvem problemas reais.
                         </p>
 
                         <h3 class="about-subtitle">Minha Missão</h3>
                         <p>
-                            Transformar ideias em realidade digital através de código limpo, design inovador e
-                            experiência do usuário excepcional. Acredito que a tecnologia deve ser acessível, bela e
-                            impactante.
+                            Transformar ideias em realidade digital através de código limpo, design inovador e uma
+                            experiência de usuário excepcional.
+                            Acredito que a tecnologia deve ser acessível, fluida e gerar impacto positivo.
                         </p>
 
                         <!-- Stats -->
@@ -614,12 +617,12 @@ MAIN CONTENT
         </section>
 
         <!-- ===== SEÇÃO PROJETOS ===== -->
-        <section id="projetos" class="section projects-section">
-            <div class="container">
-                <h2 class="section-title">Projetos Destacados</h2>
-                <p class="section-subtitle">Trabalhos realizados com excelência e inovação</p>
 
-                <!-- Projects Filter -->
+        <!-- ===== PROJECTS SECTION ===== -->
+        <section class="projects-section" id="projects">
+            <div class="container">
+
+                <!-- Botões de Filtro -->
                 <div class="projects-filter">
                     <button class="filter-btn active" data-filter="all">Todos</button>
                     <button class="filter-btn" data-filter="frontend">Front-end</button>
@@ -627,242 +630,341 @@ MAIN CONTENT
                     <button class="filter-btn" data-filter="fullstack">Full Stack</button>
                 </div>
 
-                <!-- ======================================================================================================
-                                                          Projects Grid 
-                   ============================================================                                       =========================-->
-                <div class="projects-grid" id="projectsGrid">
-                    <div class="project-card" data-category="fullstack">
-                        <div class="project-image">
-                            <img src="https://i.pinimg.com/1200x/c9/91/fa/c991fad20ac4e2485a6945c9b78d55d9.jpg"
-                                alt="E-commerce Platform">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://dmc7048240-ops.github.io/E-Comerce/" class="project-link"
-                                        title="Ver Demo">Demo</a>
-                                    <a href="https://github.com/dmc7048240-ops/E-Comerc" class="project-link"
-                                        title="GitHub">GitHub</a>
+                <!-- Container Geral dos Carrosséis -->
+                <div class="projects-carousel-container">
+
+                    <!-- ==================== 1º CARROSSEL: FRONT-END ==================== -->
+                    <div class="carousel-wrapper" data-carousel="frontend">
+                        <h3 class="carousel-title">Projetos Front-end</h3>
+
+                        <button class="carousel-arrow prev" aria-label="Anterior">&lt;</button>
+                        <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
+
+                        <div class="carousel-track-container">
+                            <div class="carousel-track projects-grid">
+
+                                <!-- Restaurante Premium -->
+                                <div class="project-card" data-category="frontend">
+                                    <div class="project-image">
+                                        <img src="./assets/Captura de Tela (25).png" alt="Landing Page">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+                                                <a href="#" class="project-link" title="Ver Demo">Demo</a>
+                                                <a href="#" class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Restaurante Premiun</h4>
+                                        <p>Landing page animada e conversão otimizada para startup</p>
+                                        <div class="project-tags">
+                                            <span class="tag">HTML5</span>
+                                            <span class="tag">CSS3</span>
+                                            <span class="tag">JavaScript</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>E-commerce Platform</h4>
-                            <p>Plataforma de vendas completa com carrinho, pagamento e dashboard</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
+
+                                <!-- Barbearia Premium -->
+                                <div class="project-card" data-category="frontend">
+                                    <div class="project-image">
+                                        <img src="https://i.pinimg.com/736x/cd/ff/47/cdff4700149fa31814056c320b1610a1.jpg"
+                                            alt="Mobile App">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+                                                <a href="https://dmc7048240-ops.github.io/Barbero-Profissional/"
+                                                    class="project-link" title="Ver Demo">Demo</a>
+                                                <a href="#" class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Barberia Premiun</h4>
+                                        <p>Ladin page completo resposivo com animações</p>
+                                        <div class="project-tags">
+                                            <span class="tag">HTML5</span>
+                                            <span class="tag">CSS3</span>
+                                            <span class="tag">JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pet Shop -->
+                                <div class="project-card" data-category="frontend">
+                                    <div class="project-image">
+                                        <img src="https://i.pinimg.com/736x/33/18/4b/33184bd1eda98572726e7186ebaf5c23.jpg"
+                                            alt="Mobile App">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+                                                <a href="https://dmc7048240-ops.github.io/Pet-Shop/"
+                                                    class="project-link" title="Ver Demo">Demo</a>
+                                                <a href="#" class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Pet Shop</h4>
+                                        <p>Ladin page completo resposivo com animações</p>
+                                        <div class="project-tags">
+                                            <span class="tag">HTML5</span>
+                                            <span class="tag">CSS3</span>
+                                            <span class="tag">JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modelista Profissional -->
+                                <div class="project-card" data-category="frontend">
+                                    <div class="project-image">
+                                        <img src="https://i.pinimg.com/1200x/8a/96/3b/8a963bceb52661a43256e16b0014bfce.jpg"
+                                            alt="Mobile App">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+                                                <a href="https://dmc7048240-ops.github.io/Modelista/"
+                                                    class="project-link" title="Ver Demo">Demo</a>
+                                                <a href="https://github.com/dmc7048240-ops/Modelista"
+                                                    class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Modelista Profissional</h4>
+                                        <p>Ladin page completo resposivo com animações</p>
+                                        <div class="project-tags">
+                                            <span class="tag">HTML5</span>
+                                            <span class="tag">CSS3</span>
+                                            <span class="tag">JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Landing Page Bolos -->
+                                <div class="project-card" data-category="frontend">
+                                    <div class="project-image">
+                                        <img src="https://i.pinimg.com/736x/47/ac/b8/47acb87628ad970164ba235deeacec3a.jpg"
+                                            alt="bolo">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+                                                <a href="https://dmc7048240-ops.github.io/landing-page-bolos/"
+                                                    class="project-link" title="Ver Demo">Demo</a>
+                                                <a href="https://github.com/dmc7048240-ops/landing-page-bolos"
+                                                    class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Landing Page Bolos</h4>
+                                        <p>Ladin page premiun de Bolos gostosos</p>
+                                        <div class="project-tags">
+                                            <span class="tag">HTML5</span>
+                                            <span class="tag">CSS3</span>
+                                            <span class="tag">JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-card" data-category="fullstack">
+                                    <div class="project-image">
+                                        <img src="https://i.pinimg.com/1200x/c9/91/fa/c991fad20ac4e2485a6945c9b78d55d9.jpg"
+                                            alt="E-commerce Platform">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+                                                <a href="https://dmc7048240-ops.github.io/E-Comerce/"
+                                                    class="project-link" title="Ver Demo">Demo</a>
+                                                <a href="https://github.com/dmc7048240-ops/E-Comerc"
+                                                    class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>E-commerce Platform</h4>
+                                        <p>Plataforma de vendas completa com carrinho, pagamento e dashboard</p>
+                                        <div class="project-tags">
+                                            <span class="tag">HTML5</span>
+                                            <span class="tag">CSS3</span>
+                                            <span class="tag">JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Odontologia -->
+                                <div class="project-card" data-category="fullstack">
+                                    <div class="project-image">
+                                        <img src="https://i.pinimg.com/736x/2f/f6/b6/2ff6b62a29995288e41424247395814b.jpg"
+                                            alt="Dashboard Analytics">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+                                                <a href="https://dmc7048240-ops.github.io/Odontologia-pro/"
+                                                    class="project-link" title="Ver Demo">Demo</a>
+                                                <a href="https://github.com/dmc7048240-ops/Odontologia-pro"
+                                                    class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Odontologia</h4>
+                                        <p>Dashboard em tempo real com gráficos e relatórios interativos</p>
+                                        <div class="project-tags">
+                                            <span class="tag">HTML5</span>
+                                            <span class="tag">CSS3</span>
+                                            <span class="tag">JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Salão de Beleza -->
+                                <div class="project-card" data-category="backend">
+                                    <div class="project-image">
+                                        <img src="https://i.pinimg.com/736x/d3/88/4a/d3884abe74d4d0b19bd84af8ae5e4d47.jpg"
+                                            alt="Salão de Beleza">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+                                                <a href="https://dmc7048240-ops.github.io/Sal-o-de-Beleza-premium/"
+                                                    class="project-link" title="Ver Demo">Demo</a>
+                                                <a href="https://github.com/dmc7048240-ops/Sal-o-de-Beleza-premium"
+                                                    class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Salão de Beleza</h4>
+                                        <p>Estilo premium</p>
+                                        <div class="project-tags">
+                                            <span class="tag">HTML5</span>
+                                            <span class="tag">CSS3</span>
+                                            <span class="tag">JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-category="frontend">
-                        <div class="project-image">
-                            <img src="./assets/Captura de Tela (25).png" alt="Landing Page">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="#" class="project-link" title="Ver Demo">Demo</a>
-                                    <a href="#" class="project-link" title="GitHub">GitHub</a>
+                    <!-- ==================== 2º CARROSSEL: BACK-END ==================== -->
+                    <div class="carousel-wrapper" data-carousel="backend">
+                        <h3 class="carousel-title">Projetos Back-end</h3>
+
+                        <button class="carousel-arrow prev" aria-label="Anterior">&lt;</button>
+                        <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
+
+                        <div class="carousel-track-container">
+                            <div class="carousel-track projects-grid">
+
+                                <!-- API Backend Robusta -->
+                                <div class="project-card" data-category="backend">
+                                    <div class="project-image">
+                                        <img src="https://looqbox.com/wp-content/uploads/2024/03/image_720.png"
+                                            alt="API Backend">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+
+                                                <a href="https://github.com/dmc7048240-ops/Cadastro-de-users-api"
+                                                    class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>API de Cadastro</h4>
+                                        <p>API REST comm mongo db, banco de dados não relacional</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Mongo</span>
+                                            <span class="tag">Node.js</span>
+                                            <span class="tag">Javascript</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Restaurante Premiun</h4>
-                            <p>Landing page animada e conversão otimizada para startup</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
+
+                                <!-- Cloud Integration -->
+                                <div class="project-card" data-category="backend">
+                                    <div class="project-image">
+                                        <img src="https://i.pinimg.com/736x/e0/1b/c4/e01bc430d6c96d4d88b54cbc42dd6dd1.jpg"
+                                            alt="Cloud Integration">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+                                                <a href="#" class="project-link" title="Ver Demo">Demo</a>
+                                                <a href="#" class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Cloud Integration</h4>
+                                        <p>Integração com serviços cloud e automação de processos</p>
+                                        <div class="project-tags">
+                                            <span class="tag">AWS</span>
+                                            <span class="tag">Docker</span>
+                                            <span class="tag">Python</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-category="backend">
-                        <div class="project-image">
-                            <img src="https://i.pinimg.com/736x/e0/1b/c4/e01bc430d6c96d4d88b54cbc42dd6dd1.jpg"
-                                alt="API Backend">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="#" class="project-link" title="Ver Demo">Demo</a>
-                                    <a href="#" class="project-link" title="GitHub">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>API Backend Robusta</h4>
-                            <p>API REST escalável com autenticação JWT e banco de dados</p>
-                            <div class="project-tags">
-                                <span class="tag">Express</span>
-                                <span class="tag">PostgreSQL</span>
-                                <span class="tag">Docker</span>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- ==================== 3º CARROSSEL: FULL STACK ==================== -->
+                    <div class="carousel-wrapper" data-carousel="fullstack">
+                        <h3 class="carousel-title">Projetos Full Stack</h3>
 
-                    <div class="project-card" data-category="fullstack">
-                        <div class="project-image">
-                            <img src="https://i.pinimg.com/736x/2f/f6/b6/2ff6b62a29995288e41424247395814b.jpg"
-                                alt="Dashboard Analytics">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://dmc7048240-ops.github.io/Odontologia-pro/" class="project-link"
-                                        title="Ver Demo">Demo</a>
-                                    <a href="https://github.com/dmc7048240-ops/Odontologia-pro" class="project-link"
-                                        title="GitHub">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Odontologia</h4>
-                            <p>Dashboard em tempo real com gráficos e relatórios interativos</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
+                        <button class="carousel-arrow prev" aria-label="Anterior">&lt;</button>
+                        <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
 
-                    <div class="project-card" data-category="frontend">
-                        <div class="project-image">
-                            <img src="https://i.pinimg.com/736x/cd/ff/47/cdff4700149fa31814056c320b1610a1.jpg"
-                                alt="Mobile App">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://dmc7048240-ops.github.io/Barbero-Profissional/"
-                                        class="project-link" title="Ver Demo">Demo</a>
-                                    <a href="#" class="project-link" title="GitHub">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Barberia Premiun</h4>
-                            <p>Ladin page completo resposivo com animações</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
+                        <div class="carousel-track-container">
+                            <div class="carousel-track projects-grid">
 
-                    <div class="project-card" data-category="backend">
-                        <div class="project-image">
-                            <img src="https://i.pinimg.com/736x/e0/1b/c4/e01bc430d6c96d4d88b54cbc42dd6dd1.jpg"
-                                alt="Cloud Integration">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="#" class="project-link" title="Ver Demo">Demo</a>
-                                    <a href="#" class="project-link" title="GitHub">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Cloud Integration</h4>
-                            <p>Integração com serviços cloud e automação de processos</p>
-                            <div class="project-tags">
-                                <span class="tag">AWS</span>
-                                <span class="tag">Docker</span>
-                                <span class="tag">Python</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="project-card" data-category="frontend">
-                        <div class="project-image">
-                            <img src="https://i.pinimg.com/736x/33/18/4b/33184bd1eda98572726e7186ebaf5c23.jpg"
-                                alt="Mobile App">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://dmc7048240-ops.github.io/Pet-Shop/" class="project-link"
-                                        title="Ver Demo">Demo</a>
-                                    <a href="#" class="project-link" title="GitHub">GitHub</a>
+                                <div class="project-card" data-category="backend">
+                                    <div class="project-image">
+                                        <img src="https://i.pinimg.com/736x/e0/1b/c4/e01bc430d6c96d4d88b54cbc42dd6dd1.jpg"
+                                            alt="Cloud Integration">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+                                                <a href="#" class="project-link" title="Ver Demo">Demo</a>
+                                                <a href="#" class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Cloud Integration</h4>
+                                        <p>Integração com serviços cloud e automação de processos</p>
+                                        <div class="project-tags">
+                                            <span class="tag">AWS</span>
+                                            <span class="tag">Docker</span>
+                                            <span class="tag">Python</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Pet Shop</h4>
-                            <p>Ladin page completo resposivo com animações</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="frontend">
-                        <div class="project-image">
-                            <img src="https://i.pinimg.com/1200x/8a/96/3b/8a963bceb52661a43256e16b0014bfce.jpg"
-                                alt="Mobile App">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://dmc7048240-ops.github.io/Modelista/" class="project-link"
-                                        title="Ver Demo">Demo</a>
-                                    <a href="https://github.com/dmc7048240-ops/Modelista" class="project-link"
-                                        title="GitHub">GitHub</a>
+                                <div class="project-card" data-category="backend">
+                                    <div class="project-image">
+                                        <img src="https://i.pinimg.com/736x/62/19/c9/6219c95e0caa7f207b92b12789cee5e5.jpg"
+                                            alt="Cloud Integration">
+                                        <div class="project-overlay">
+                                            <div class="project-links">
+                                                
+                                                <a href="https://github.com/dmc7048240-ops/Cadastro-de-Users" class="project-link" title="GitHub">GitHub</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Tela de Cadastro</h4>
+                                        <p>Aplicação para cadastrar e logar usuariós</p>
+                                        <div class="project-tags">
+                                            <span class="tag">React</span>
+                                            <span class="tag">Axios</span>
+                                            <span class="tag">Node.js</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Modelista Profissional</h4>
-                            <p>Ladin page completo resposivo com animações</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="frontend">
-                        <div class="project-image">
-                            <img src="https://i.pinimg.com/736x/47/ac/b8/47acb87628ad970164ba235deeacec3a.jpg"
-                                alt="bolo">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://dmc7048240-ops.github.io/landing-page-bolos/" class="project-link"
-                                        title="Ver Demo">Demo</a>
-                                    <a href="https://github.com/dmc7048240-ops/landing-page-bolos" class="project-link"
-                                        title="GitHub">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Landing Page Bolos</h4>
-                            <p>Ladin page premiun de Bolos gostosos</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="backend">
-                        <div class="project-image">
-                            <img src="https://i.pinimg.com/736x/d3/88/4a/d3884abe74d4d0b19bd84af8ae5e4d47.jpg"
-                                alt="Cloud Integration">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://dmc7048240-ops.github.io/Sal-o-de-Beleza-premium/"
-                                        class="project-link" title="Ver Demo">Demo</a>
-                                    <a href="https://github.com/dmc7048240-ops/Sal-o-de-Beleza-premium"
-                                        class="project-link" title="GitHub">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Salão de Beleza</h4>
-                            <p>Estilo premium</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
 
 
 
 
-                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- /projects-carousel-container -->
+
             </div>
         </section>
         <!--=====================================================================================================================
@@ -919,13 +1021,13 @@ MAIN CONTENT
         </section>
 
         <!-- ===== SEÇÃO CERTIFICADOS ===== -->
-        
+
 
         <section id="certificados" class="coverflow-section">
             <h2 class="section-title">Certificações</h2>
-            <p class="section-subtitle">Formação e reconhecimento profissional em tecnologias 
-                de desenvolvimento, com certificações e 
-                 competências essenciais.</p>
+            <p class="section-subtitle">Formação e reconhecimento profissional em tecnologias
+                de desenvolvimento, com certificações e
+                competências essenciais.</p>
 
             <div class="coverflow-container">
                 <!-- Botões de Navegação Seta -->
@@ -953,18 +1055,26 @@ MAIN CONTENT
         </div>
 
         <!-- ===== SEÇÃO DEPOIMENTOS ===== -->
+
         <section id="depoimentos" class="section testimonials-section">
             <div class="container">
                 <h2 class="section-title">Depoimentos</h2>
-                <p class="section-subtitle">O que clientes e colegas dizem sobre meu trabalho</p>
+                <p class="section-subtitle">O que clientes e parceiros dizem sobre meu trabalho</p>
 
+                <!-- Container do Carrossel -->
                 <div class="testimonials-carousel" id="testimonialsCarousel">
+
+                    <!-- Card 1 -->
                     <div class="testimonial-card active">
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Diego é um desenvolvedor excepcional! Transformou nosso projeto em
-                            algo incrível. Altamente recomendado!"</p>
+                        <p class="testimonial-text">"O Diego transformou completamente a experiência do nosso site. Ele
+                            superou as expectativas na entrega, criando uma interface rápida, intuitiva e moderna. O
+                            suporte e a atenção aos detalhes fizeram toda a diferença!"</p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">👤</div>
+                            <div class="author-avatar">
+                                <img src="https://i.pinimg.com/736x/fb/c7/c0/fbc7c0f44564099388f9c5ffcc338944.jpg"
+                                    alt="avatar">
+                            </div>
                             <div>
                                 <h4>João Silva</h4>
                                 <p>CEO - Tech StartUp</p>
@@ -972,12 +1082,17 @@ MAIN CONTENT
                         </div>
                     </div>
 
+                    <!-- Card 2 -->
                     <div class="testimonial-card">
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Profissional dedicado, criativo e muito atento aos detalhes.
-                            Trabalho de qualidade premium!"</p>
+                        <p class="testimonial-text">"Trabalhar com o Diego foi uma excelente experiência. Profissional
+                            extremamente pontual, com ótimo domínio técnico em Front-End e um olhar apurado para UX/UI.
+                            Entregou o projeto antes do prazo!"</p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">👤</div>
+                            <div class="author-avatar">
+                                <img src="https://i.pinimg.com/736x/00/bb/1f/00bb1f7d85860cbb4d607d085d0f66a8.jpg"
+                                    alt="avatar">
+                            </div>
                             <div>
                                 <h4>Maria Santos</h4>
                                 <p>Product Manager - Digital Agency</p>
@@ -985,30 +1100,39 @@ MAIN CONTENT
                         </div>
                     </div>
 
+                    <!-- Card 3 -->
                     <div class="testimonial-card">
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Melhor investimento que fizemos! Diego entregou resultados
-                            extraordinários para nosso e-commerce."</p>
+                        <p class="testimonial-text">"Excelente trabalho! O Diego estruturou nossa loja virtual
+                            garantindo um carregamento ultra rápido e layout 100% responsivo. Tivemos um aumento direto
+                            nas conversões logo no primeiro mês."</p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">👤</div>
+                            <div class="author-avatar">
+                                <img src="https://i.pinimg.com/1200x/33/68/c4/3368c4cf650b851ed3f13b87bc882db9.jpg"
+                                    alt="avatar">
+                            </div>
                             <div>
                                 <h4>Carlos Mendes</h4>
                                 <p>Founder - E-commerce Platform</p>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
-                <!-- Carousel Controls -->
+                <!-- Controles do Carrossel (Setas e Dots) -->
                 <div class="carousel-controls">
-                    <button class="carousel-btn prev" id="prevTestimonial">←</button>
-                    <div class="carousel-dots" id="carouselDots">
-                        <span class="dot active" data-index="0"></span>
-                        <span class="dot" data-index="1"></span>
-                        <span class="dot" data-index="2"></span>
+                    <button class="carousel-btn" id="prevTestimonial" aria-label="Depoimento anterior">❮</button>
+
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
-                    <button class="carousel-btn next" id="nextTestimonial">→</button>
+
+                    <button class="carousel-btn" id="nextTestimonial" aria-label="Próximo depoimento">❯</button>
                 </div>
+
             </div>
         </section>
 
@@ -1236,7 +1360,6 @@ SCRIPTS
     <script src="js/themes.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/mascot.js"></script>
     <script src="js/certificados.js"></script>
 </body>
 

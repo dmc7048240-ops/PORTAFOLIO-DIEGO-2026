@@ -64,57 +64,43 @@ loadingScreen.classList.add('hidden');
 }, 400);
 }
 
-// ===== NAVEGAÇÃO =====
+// ===== NAVEGAÇÃO =====================================================================
 
-function initNavigation() {
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
-const navbar = document.getElementById('navbar');
-const navLinks = document.querySelectorAll('.nav-link');
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  const navLinks = document.querySelectorAll('.nav-link');
 
-// Toggle menu
-menuToggle.addEventListener('click', () => {
-menuToggle.classList.toggle('active');
-navMenu.classList.toggle('active');
+  if (menuToggle && navMenu) {
+    // Abrir / Fechar ao clicar no botão
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Fechar ao clicar em qualquer link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Fechar ao clicar fora da gaveta
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
 });
 
-// Fechar menu ao clicar em link
-navLinks.forEach(link => {
-link.addEventListener('click', () => {
-menuToggle.classList.remove('active');
-navMenu.classList.remove('active');
 
-// Atualizar active link
-navLinks.forEach(l => l.classList.remove('active'));
-link.classList.add('active');
-});
-});
-
-// Navbar glassmorphism ao scroll
-window.addEventListener('scroll', () => {
-if (window.scrollY > 50) {
-navbar.classList.add('scrolled');
-} else {
-navbar.classList.remove('scrolled');
-}
-});
-}
-
-// ===== SCROLL PROGRESS BAR =====
-
-function initScrollProgress() {
-const scrollProgress = document.getElementById('scrollProgress');
-
-window.addEventListener('scroll', () => {
-const scrollTop = window.scrollY;
-const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-const scrollPercent = (scrollTop / docHeight) * 100;
-
-scrollProgress.style.width = scrollPercent + '%';
-});
-}
-
-// ===== SISTEMA DE TEMAS =====
+// =================================================
+//                SISTEMA DE TEMAS
+// ============================================= =====
 
 function initThemeSystem() {
 const themeSwitcher = document.getElementById('themeSwitcher');
@@ -247,38 +233,170 @@ card.style.animation = 'fadeInUp 0.6s ease forwards';
 }
 
 // ===== PROJECTS FILTER =====
+// ===== PROJECTS MULTI-CAROUSEL & FILTER =====
+
+// ===== PROJECTS MULTI-CAROUSEL & FILTER DIRECTO POR CARROSSEL =====
 
 function initProjectsFilter() {
-const filterBtns = document.querySelectorAll('.projects-filter .filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
+    const filterBtns = document.querySelectorAll('.projects-filter .filter-btn');
+    const wrappers = document.querySelectorAll('.carousel-wrapper');
 
-filterBtns.forEach(btn => {
-btn.addEventListener('click', () => {
-const filter = btn.getAttribute('data-filter');
+    // 1. LÓGICA DE MOVIMENTAÇÃO DE CADA CARROSSEL (SETAS E SCROLL)
+    wrappers.forEach(wrapper => {
+        const track = wrapper.querySelector('.carousel-track');
+        const prevBtn = wrapper.querySelector('.carousel-arrow.prev');
+        const nextBtn = wrapper.querySelector('.carousel-arrow.next');
+        
+        let currentIndex = 0;
 
-filterBtns.forEach(b => b.classList.remove('active'));
-btn.classList.add('active');
+        function moveCarousel() {
+            const cards = wrapper.querySelectorAll('.project-card');
+            if (cards.length === 0) return;
 
-projectCards.forEach(card => {
-card.style.display = 'none';
-card.style.animation = 'none';
+            const cardWidth = cards[0].getBoundingClientRect().width + 25; // Largura do card + gap
+            const maxIndex = Math.max(0, cards.length - Math.floor(wrapper.offsetWidth / cardWidth));
+            
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            if (currentIndex < 0) currentIndex = 0;
 
-if (filter === 'all' || card.getAttribute('data-category') === filter) {
-setTimeout(() => {
-card.style.display = 'block';
-card.style.animation = 'fadeInUp 0.6s ease forwards';
-}, 10);
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+
+        if (nextBtn && prevBtn) {
+            nextBtn.addEventListener('click', () => {
+                const cards = wrapper.querySelectorAll('.project-card');
+                const maxIndex = Math.max(0, cards.length - Math.floor(wrapper.offsetWidth / 350));
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    moveCarousel();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    moveCarousel();
+                }
+            });
+        }
+
+        // Função para resetar a posição do carrossel para o início
+        wrapper.resetCarousel = () => {
+            currentIndex = 0;
+            track.style.transform = 'translateX(0px)';
+        };
+
+        window.addEventListener('resize', moveCarousel);
+    });
+
+    // 2. LÓGICA DO FILTRO (MAPEMENTO DIRETO: 1 BOTÃO = 1 CARROSSEL)
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+
+            // Atualiza a classe ativa visual do botão
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Percorre os 3 carrosséis e decide qual exibir baseado no índice
+            wrappers.forEach((wrapper, index) => {
+                wrapper.resetCarousel(); // Volta a posição do carrossel para o 1º item
+
+                if (filter === 'all') {
+                    // Botão 'Todos': Exibe os 3 carrosséis
+                    wrapper.style.display = 'block';
+                    wrapper.style.animation = 'fadeInUp 0.6s ease forwards';
+                } 
+                else if (filter === 'frontend' && index === 0) {
+                    // Botão 'Front-end': Apenas o 1º carrossel (index 0)
+                    wrapper.style.display = 'block';
+                    wrapper.style.animation = 'fadeInUp 0.6s ease forwards';
+                } 
+                else if (filter === 'backend' && index === 1) {
+                    // Botão 'Back-end': Apenas o 2º carrossel (index 1)
+                    wrapper.style.display = 'block';
+                    wrapper.style.animation = 'fadeInUp 0.6s ease forwards';
+                } 
+                else if (filter === 'fullstack' && index === 2) {
+                    // Botão 'Full Stack': Apenas o 3º carrossel (index 2)
+                    wrapper.style.display = 'block';
+                    wrapper.style.animation = 'fadeInUp 0.6s ease forwards';
+                } 
+                else {
+                    // Esconde todos os outros que não coincidem com o botão clicado
+                    wrapper.style.display = 'none';
+                }
+            });
+        });
+    });
 }
-});
-});
-});
-}
 
-// Inicializar filters
+// Inicializador
 document.addEventListener('DOMContentLoaded', () => {
-initSkillsFilter();
-initProjectsFilter();
+    if (typeof initSkillsFilter === "function") initSkillsFilter();
+    initProjectsFilter();
+    if (typeof initTypingEffect === "function") initTypingEffect();
 });
+
+// ===== TYPING EFFECT =====
+function initTypingEffect() {
+    const typingText = document.getElementById('typingText');
+    const phrases = [
+        'Full Stack Developer',
+        'JavaScript Expert',
+        'Front-End Developer',
+        'Back-End Developer',
+        'UI Designer',
+        'API Developer',
+        'Creative Programmer',
+        'Software Engineer'
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        if (!typingText) return;
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+            charIndex--;
+        } else {
+            charIndex++;
+        }
+
+        typingText.textContent = currentPhrase.substring(0, charIndex);
+        let speed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            isDeleting = true;
+            speed = 2000; 
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            speed = 500; 
+        }
+
+        setTimeout(type, speed);
+    }
+
+    type();
+}
+
+// Inicializador Único Confiável
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initSkillsFilter === "function") initSkillsFilter();
+    initProjectsFilter();
+    initTypingEffect();
+});
+
+
+
+
+
+
+
 
 // ===== TYPING EFFECT =====
 
@@ -334,48 +452,83 @@ type();
 document.addEventListener('DOMContentLoaded', initTypingEffect);
 
 // ===== TESTIMONIAL CAROUSEL =====
+// ===== TESTIMONIAL CAROUSEL =====
 
 function initTestimonialCarousel() {
-const cards = document.querySelectorAll('.testimonial-card');
-const dots = document.querySelectorAll('.carousel-dots .dot');
-const prevBtn = document.getElementById('prevTestimonial');
-const nextBtn = document.getElementById('nextTestimonial');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    const prevBtn = document.getElementById('prevTestimonial');
+    const nextBtn = document.getElementById('nextTestimonial');
+    const carouselContainer = document.getElementById('testimonialsCarousel');
 
-let currentIndex = 0;
+    if (!cards.length) return;
 
-function showTestimonial(index) {
-cards.forEach(card => card.classList.remove('active'));
-dots.forEach(dot => dot.classList.remove('active'));
+    let currentIndex = 0;
+    let autoPlayTimer = null;
+    const INTERVAL_TIME = 7000;
 
-cards[index].classList.add('active');
-dots[index].classList.add('active');
+    function showTestimonial(index) {
+        // Trata o estouro de índice
+        if (index >= cards.length) currentIndex = 0;
+        else if (index < 0) currentIndex = cards.length - 1;
+        else currentIndex = index;
+
+        cards.forEach(card => card.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        cards[currentIndex].classList.add('active');
+        if (dots[currentIndex]) {
+            dots[currentIndex].classList.add('active');
+        }
+
+        resetAutoPlay();
+    }
+
+    function nextSlide() {
+        showTestimonial(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showTestimonial(currentIndex - 1);
+    }
+
+    function startAutoPlay() {
+        if (!autoPlayTimer) {
+            autoPlayTimer = setInterval(nextSlide, INTERVAL_TIME);
+        }
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+        startAutoPlay();
+    }
+
+    // Event Listeners dos Botões
+    prevBtn?.addEventListener('click', prevSlide);
+    nextBtn?.addEventListener('click', nextSlide);
+
+    // Event Listeners dos Dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showTestimonial(index);
+        });
+    });
+
+    // Pausa o carrossel quando o mouse estiver em cima do card
+    carouselContainer?.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+    carouselContainer?.addEventListener('mouseleave', startAutoPlay);
+
+    // Inicializa o carrossel
+    showTestimonial(0);
 }
 
-prevBtn?.addEventListener('click', () => {
-currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-showTestimonial(currentIndex);
-});
+// Inicia ao carregar o DOM
+document.addEventListener('DOMContentLoaded', initTestimonialCarousel);
 
-nextBtn?.addEventListener('click', () => {
-currentIndex = (currentIndex + 1) % cards.length;
-showTestimonial(currentIndex);
-});
-
-dots.forEach((dot, index) => {
-dot.addEventListener('click', () => {
-currentIndex = index;
-showTestimonial(currentIndex);
-});
-});
-
-// Auto-carousel
-setInterval(() => {
-currentIndex = (currentIndex + 1) % cards.length;
-showTestimonial(currentIndex);
-}, 8000);
-}
-
-// ===== FAQ =====
+// ========================================================================================
+//                                   FAQ 
+// ==========================================================================================================
 
 function initFAQ() {
 const details = document.querySelectorAll('.faq-item');
