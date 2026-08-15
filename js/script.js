@@ -627,7 +627,7 @@ behavior: 'smooth'
 // ===== SMOOTH SCROLL =====
 
 function initSmoothScroll() {
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href="https://w.app/gk21pe"]').forEach(anchor => {
 anchor.addEventListener('click', function (e) {
 e.preventDefault();
 
